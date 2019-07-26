@@ -1,0 +1,14 @@
+{
+    "stragetry": {
+        "awscloudformation": {
+            "AuthRoleName": "s3-upload-stragetry-20190726232822-authRole",
+            "UnauthRoleArn": "arn:aws:iam::545119869345:role/s3-upload-stragetry-20190726232822-unauthRole",
+            "AuthRoleArn": "arn:aws:iam::545119869345:role/s3-upload-stragetry-20190726232822-authRole",
+            "Region": "us-east-1",
+            "DeploymentBucketName": "s3-upload-stragetry-20190726232822-deployment",
+            "UnauthRoleName": "s3-upload-stragetry-20190726232822-unauthRole",
+            "StackName": "s3-upload-stragetry-20190726232822",
+            "StackId": "arn:aws:cloudformation:us-east-1:545119869345:stack/s3-upload-stragetry-20190726232822/a04fb040-afb1-11e9-abbe-0e6c5fec19cc"
+        }
+    }
+}
