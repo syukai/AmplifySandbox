@@ -4,5 +4,11 @@
 			"service": "Cognito",
 			"providerPlugin": "awscloudformation"
 		}
+	},
+	"storage": {
+		"s3f4b64a86": {
+			"service": "S3",
+			"providerPlugin": "awscloudformation"
+		}
 	}
 }
