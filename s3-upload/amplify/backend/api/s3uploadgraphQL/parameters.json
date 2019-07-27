@@ -1,0 +1,10 @@
+{
+    "AppSyncApiName": "s3uploadgraphQL",
+    "DynamoDBBillingMode": "PAY_PER_REQUEST",
+    "AuthCognitoUserPoolId": {
+        "Fn::GetAtt": [
+            "auths3uploadtry",
+            "Outputs.UserPoolId"
+        ]
+    }
+}
