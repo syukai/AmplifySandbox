@@ -9,6 +9,11 @@
             "UnauthRoleName": "s3-upload-stragetry-20190726232822-unauthRole",
             "StackName": "s3-upload-stragetry-20190726232822",
             "StackId": "arn:aws:cloudformation:us-east-1:545119869345:stack/s3-upload-stragetry-20190726232822/a04fb040-afb1-11e9-abbe-0e6c5fec19cc"
+        },
+        "categories": {
+            "auth": {
+                "s3uploadtry": {}
+            }
         }
     }
 }

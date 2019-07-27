@@ -1,1 +1,8 @@
-{}
+{
+	"auth": {
+		"s3uploadtry": {
+			"service": "Cognito",
+			"providerPlugin": "awscloudformation"
+		}
+	}
+}
