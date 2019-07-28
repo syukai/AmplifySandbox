@@ -15,5 +15,22 @@
                 "s3uploadtry": {}
             }
         }
+    },
+    "strupload": {
+        "awscloudformation": {
+            "AuthRoleName": "s3-upload-strupload-20190728223454-authRole",
+            "UnauthRoleArn": "arn:aws:iam::545119869345:role/s3-upload-strupload-20190728223454-unauthRole",
+            "AuthRoleArn": "arn:aws:iam::545119869345:role/s3-upload-strupload-20190728223454-authRole",
+            "Region": "us-east-1",
+            "DeploymentBucketName": "s3-upload-strupload-20190728223454-deployment",
+            "UnauthRoleName": "s3-upload-strupload-20190728223454-unauthRole",
+            "StackName": "s3-upload-strupload-20190728223454",
+            "StackId": "arn:aws:cloudformation:us-east-1:545119869345:stack/s3-upload-strupload-20190728223454/7c5b40a0-b13c-11e9-8e4f-0a5c603a1bba"
+        },
+        "categories": {
+            "auth": {
+                "s3uploadtry": {}
+            }
+        }
     }
 }
