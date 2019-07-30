@@ -1,10 +1,10 @@
 import Vue from 'vue'
 import Router from 'vue-router'
 import Home from './views/Home.vue'
-import { components, AmplifyEventBus } from 'aws-amplify-vue';
+const { components, AmplifyEventBus } = require('aws-amplify-vue');
 import Amplify, * as AmplifyModules from 'aws-amplify';
-import { AmplifyPlugin } from 'aws-amplify-vue';
-import AmplifyStore from '../store/store';
+const { AmplifyPlugin } = require('aws-amplify-vue');
+import AmplifyStore from 'store/store.vue';
 
 Vue.use(Router)
 Vue.use(AmplifyPlugin, AmplifyModules);
