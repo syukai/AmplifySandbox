@@ -1,31 +1,31 @@
 import Vue from 'vue'
 import Router from 'vue-router'
 import Home from './views/Home.vue'
-const { components, AmplifyEventBus } = require('aws-amplify-vue');
-import Amplify, * as AmplifyModules from 'aws-amplify';
-const { AmplifyPlugin } = require('aws-amplify-vue');
-import AmplifyStore from 'store/store.vue';
+import Amplify, * as AmplifyModules from 'aws-amplify'
+const { components, AmplifyEventBus } = require('aws-amplify-vue')
+const { AmplifyPlugin } = require('aws-amplify-vue')
+const AmplifyStore = require('./store/store')
 
 Vue.use(Router)
-Vue.use(AmplifyPlugin, AmplifyModules);
-let user;
+Vue.use(AmplifyPlugin, AmplifyModules)
+let user
 
 getUser().then((user:any, error:any) => {
   if (user) {
-    router.push({path: '/'})
+    router.push({ path: '/' })
   }
 })
 
-function getUser() {
+function getUser () {
   return Vue.prototype.$Amplify.Auth.currentAuthenticatedUser().then((data:any) => {
     if (data && data.signInUserSession) {
-      AmplifyStore.commit('setUser', data);
-      return data;
-    } 
+      AmplifyStore.commit('setUser', data)
+      return data
+    }
   }).catch((e:any) => {
-    AmplifyStore.commit('setUser', null);
+    AmplifyStore.commit('setUser', null)
     return null
-  });
+  })
 }
 
 const router = new Router({
@@ -55,14 +55,14 @@ const router = new Router({
 
 router.beforeResolve(async (to, from, next) => {
   if (to.matched.some(record => record.meta.requiresAuth)) {
-    user = await getUser();
+    user = await getUser()
     if (!user) {
       return next({
         path: '/auth',
         query: {
-          redirect: to.fullPath,
+          redirect: to.fullPath
         }
-      });
+      })
     }
     return next()
   }

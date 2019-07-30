@@ -9,6 +9,8 @@
     "test:unit": "vue-cli-service test:unit"
   },
   "dependencies": {
+    "@types/graphql": "^14.2.3",
+    "@types/zen-observable": "^0.8.0",
     "aws-amplify": "^1.1.32",
     "aws-amplify-vue": "^0.2.13",
     "core-js": "^2.6.5",
