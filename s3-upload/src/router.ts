@@ -10,19 +10,19 @@ Vue.use(Router)
 Vue.use(AmplifyPlugin, AmplifyModules)
 let user
 
-getUser().then((user:any, error:any) => {
+getUser().then((user: any, error: any) => {
   if (user) {
     router.push({ path: '/' })
   }
 })
 
 function getUser () {
-  return Vue.prototype.$Amplify.Auth.currentAuthenticatedUser().then((data:any) => {
+  return Vue.prototype.$Amplify.Auth.currentAuthenticatedUser().then((data: any) => {
     if (data && data.signInUserSession) {
       AmplifyStore.commit('setUser', data)
       return data
     }
-  }).catch((e:any) => {
+  }).catch((e: any) => {
     AmplifyStore.commit('setUser', null)
     return null
   })

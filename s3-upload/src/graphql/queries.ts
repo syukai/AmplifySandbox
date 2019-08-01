@@ -8,7 +8,7 @@ export const getTodo = `query GetTodo($id: ID!) {
     description
   }
 }
-`;
+`
 export const listTodos = `query ListTodos(
   $filter: ModelTodoFilterInput
   $limit: Int
@@ -23,4 +23,4 @@ export const listTodos = `query ListTodos(
     nextToken
   }
 }
-`;
+`

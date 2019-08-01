@@ -8,7 +8,7 @@ export const onCreateTodo = `subscription OnCreateTodo {
     description
   }
 }
-`;
+`
 export const onUpdateTodo = `subscription OnUpdateTodo {
   onUpdateTodo {
     id
@@ -16,7 +16,7 @@ export const onUpdateTodo = `subscription OnUpdateTodo {
     description
   }
 }
-`;
+`
 export const onDeleteTodo = `subscription OnDeleteTodo {
   onDeleteTodo {
     id
@@ -24,4 +24,4 @@ export const onDeleteTodo = `subscription OnDeleteTodo {
     description
   }
 }
-`;
+`
