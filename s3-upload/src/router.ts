@@ -23,7 +23,7 @@ function getUser () {
       return data
     }
   }).catch((e: any) => {
-    AmplifyStore.commit('setUser', null)
+    AmplifyStore.default.commit('setUser', null)
     return null
   })
 }

@@ -3,7 +3,7 @@ import App from './App.vue'
 import router from './router'
 import Amplify, * as AmplifyModules from 'aws-amplify'
 // @ts-ignore
-import { AmplifyPlugin } from 'aws-amplify-vue'
+import { components, AmplifyPlugin } from 'aws-amplify-vue'
 // @ts-ignore
 import awsExports from './aws-exports'
 Amplify.configure(awsExports)
@@ -14,5 +14,9 @@ Vue.config.productionTip = false
 
 new Vue({
   router,
-  render: h => h(App)
+  render: h => h(App),
+  components: {
+    App,
+    components
+  }
 }).$mount('#app')
