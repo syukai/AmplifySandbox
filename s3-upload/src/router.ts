@@ -1,6 +1,7 @@
 import Vue from 'vue'
 import Router from 'vue-router'
 import Home from './views/Home.vue'
+import Authenticator from './views/Authenticator.vue'
 import Amplify, * as AmplifyModules from 'aws-amplify'
 // @ts-ignore
 import AmplifyStore from './store/store'
@@ -51,7 +52,7 @@ const router = new Router({
     {
       path: '/auth',
       name: 'Authenticator',
-      component: components.Authenticator
+      component: Authenticator
     }
   ]
 })
