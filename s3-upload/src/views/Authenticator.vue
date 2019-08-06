@@ -17,7 +17,15 @@ export default class Home extends Vue {
   /** data */
   authConfig: any = {
     signUpConfig: {
-      signUpFields: ['name'],
+      signUpFields: [
+        {
+          label: 'name',
+          key: 'name',
+          required: true,
+          displayOrder: 4,
+          type: 'string'
+        }
+      ],
       hiddenDefaults: ['phone_number']
     }
   };
