@@ -1,6 +1,7 @@
 import Vue from 'vue'
 import Router from 'vue-router'
 import Home from './views/Home.vue'
+import { Profile } from '@/components'
 import Authenticator from './views/Authenticator.vue'
 import Amplify, * as AmplifyModules from 'aws-amplify'
 // @ts-ignore
@@ -48,6 +49,12 @@ const router = new Router({
       // which is lazy-loaded when the route is visited.
       component: () => import(/* webpackChunkName: "about" */ './views/About.vue'),
       meta: { requiresAuth: true }
+    },
+    {
+      path: '/profile',
+      name: 'Profile',
+      component: Profile,
+      meta: { requiresAuth: true}
     },
     {
       path: '/auth',

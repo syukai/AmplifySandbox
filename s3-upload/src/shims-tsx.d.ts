@@ -1,4 +1,5 @@
 import Vue, { VNode } from 'vue'
+import {AmplifyState} from './store/types'
 
 declare global {
     namespace JSX {
@@ -9,5 +10,6 @@ declare global {
         interface IntrinsicElements {
             [elem: string]: any;
         }
+        interface AmplifyStore extends AmplifyState {}
     }
 }
