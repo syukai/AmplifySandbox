@@ -84,6 +84,5 @@ export default class Profile extends Vue {
       'is-dark': !this.mfa
     }
   }
-
 }
 </script>
