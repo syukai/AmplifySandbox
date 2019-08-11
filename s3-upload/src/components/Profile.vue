@@ -36,18 +36,19 @@
 
 <script lang="ts">
 import { Auth, Storage, Logger } from 'aws-amplify'
-import AmplifyStore from '../store/store'
+// @ts-ignore
+import { UserModule } from '../store/store-user'
 
 import { Component, Vue } from 'vue-property-decorator'
 @Component({})
 export default class Profile extends Vue {
   /** data */
   profilePic: boolean = false;
-  imagePath:string = `${AmplifyStore.state.user.username}/avatar`;
+  imagePath:string = `${UserModule.user.username}/avatar`;
   photoPickerConfig: any = {
     header: 'Upload Profile Pic',
     accept: 'image/*',
-    path: `${AmplifyStore.state.user.username}/`,
+    path: `${UserModule.user.username}/`,
     defaultName: 'avatar'
   };
   mfa: boolean = false;
@@ -68,7 +69,7 @@ export default class Profile extends Vue {
     }
   }
   get user () {
-    return AmplifyStore.state.user
+    return UserModule.user
   }
   get profilePicAccordion () {
     return {

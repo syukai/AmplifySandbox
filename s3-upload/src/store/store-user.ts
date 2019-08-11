@@ -1,16 +1,19 @@
-import Vuex, { StoreOptions, MutationTree } from 'vuex'
+import { Mutation, Action, VuexModule, getModule, Module } from "vuex-module-decorators";
+import store from "@/store/store"; // デコレータでstoreを指定するためimportする必要あり
 import { AmplifyState } from './types'
 
-// const store: StoreOptions<AmplifyState> = {
-const state: AmplifyState = {
-  user: null
-}
-// const mutations: MutationTree<AmplifyState> = {
-const mutations = {
-  setUser: (state: AmplifyState, user: any) => (state.user = user)
+import Vuex, { StoreOptions, MutationTree } from 'vuex'
+
+@Module({ dynamic: true, store, name:'user', namespaced: true})
+class User extends VuexModule implements AmplifyState {
+  user = {
+    username: ''
+  };
+
+  @Mutation
+  setUser(state: AmplifyState, user: any) {
+    state.user = user;
+  }
 }
 
-export default {
-  state,
-  mutations
-}
+export const UserModule = getModule(User);

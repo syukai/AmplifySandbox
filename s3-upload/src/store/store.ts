@@ -1,11 +1,7 @@
 import Vue from 'vue'
 import Vuex, { StoreOptions, MutationTree } from 'vuex'
-import storeUser from './store-user'
+import {AmplifyState} from './types'
 
 Vue.use(Vuex)
 
-export default new Vuex.Store({
-  modules: {
-    user: storeUser
-  }
-})
+export default new Vuex.Store<AmplifyState>({})

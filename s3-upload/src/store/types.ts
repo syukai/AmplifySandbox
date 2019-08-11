@@ -1,3 +1,5 @@
 export interface AmplifyState {
-    user: string | null
+    user: {
+        username: string
+    }
 }
