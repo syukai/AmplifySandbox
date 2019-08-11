@@ -5,7 +5,7 @@ import { Profile } from '@/components'
 import Authenticator from './views/Authenticator.vue'
 import Amplify, * as AmplifyModules from 'aws-amplify'
 // @ts-ignore
-import AmplifyStore from './store/store'
+import { UserModule } from './store/store-user'
 // @ts-ignore
 import { components, AmplifyEventBus, AmplifyPlugin } from 'aws-amplify-vue'
 
@@ -22,11 +22,11 @@ getUser().then((user: any, error: any) => {
 function getUser () {
   return Vue.prototype.$Amplify.Auth.currentAuthenticatedUser().then((data: any) => {
     if (data && data.signInUserSession) {
-      AmplifyStore.commit('setUser', data)
+      UserModule.setUser(data)
       return data
     }
   }).catch((e: any) => {
-    AmplifyStore.commit('setUser', null)
+    UserModule.setUser(null)
     return null
   })
 }
@@ -54,7 +54,7 @@ const router = new Router({
       path: '/profile',
       name: 'Profile',
       component: Profile,
-      meta: { requiresAuth: true}
+      meta: { requiresAuth: true }
     },
     {
       path: '/auth',
