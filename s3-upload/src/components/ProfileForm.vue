@@ -36,7 +36,7 @@ export default class ProfileForm extends Vue {
         ...currentUser.attributes
       }
     }
-    return 'mounted';
+    return 'mounted'
   }
 
   save () {
